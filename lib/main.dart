@@ -43,16 +43,26 @@ class _HeartbeatState extends State<Heartbeat> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: ScaleTransition(
-          scale: _animation,
-          child: Padding(
-            padding: EdgeInsets.all(2.0),
-            child: Image.asset(
-              'assets/images/Heart.png',
-              height: 212.0,
-              width: 212.0,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ScaleTransition(
+              scale: _animation,
+              child: Padding(
+                padding: EdgeInsets.all(2.0),
+                child: Image.asset(
+                  'assets/images/Heart.png',
+                  height: 212.0,
+                  width: 212.0,
+                ),
+              ),
             ),
-          ),
+            Text(
+              "Happy Valentine day to all the couples in the world !",
+              style: TextStyle(
+                  fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'ITC'),
+            ),
+          ],
         ),
       ),
     );
