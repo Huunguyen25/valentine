@@ -62,7 +62,7 @@ class _HeartbeatState extends State<Heartbeat> with TickerProviderStateMixin {
               "Happy Valentine's Day to all the lovers, dreamers, and friends who make the world a little brighter. May your day be filled with love, laughter, and sweet moments that warm your heart.",
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 25,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'ITC',
                   color: Colors.white),
