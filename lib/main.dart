@@ -42,6 +42,7 @@ class _HeartbeatState extends State<Heartbeat> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.pinkAccent,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -58,9 +59,13 @@ class _HeartbeatState extends State<Heartbeat> with TickerProviderStateMixin {
               ),
             ),
             Text(
-              "Happy Valentine day to all the couples in the world !",
+              "Happy Valentine's Day to all the lovers, dreamers, and friends who make the world a little brighter. May your day be filled with love, laughter, and sweet moments that warm your heart.",
+              textAlign: TextAlign.center,
               style: TextStyle(
-                  fontSize: 20, fontWeight: FontWeight.bold, fontFamily: 'ITC'),
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'ITC',
+                  color: Colors.white),
             ),
           ],
         ),
