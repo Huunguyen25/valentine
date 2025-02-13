@@ -3,35 +3,34 @@ import 'package:flutter/material.dart';
 //Foungnigue Souleymane Hassan Coulibaly
 // Huu Nguyen
 
-void main() => runApp(const ScaleTransitionExampleApp());
+void main() => runApp(const HeartbeatApp());
 
-class ScaleTransitionExampleApp extends StatelessWidget {
-  const ScaleTransitionExampleApp({super.key});
+class HeartbeatApp extends StatelessWidget {
+  const HeartbeatApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: ScaleTransitionExample());
+    return const MaterialApp(home: Heartbeat());
   }
 }
 
-class ScaleTransitionExample extends StatefulWidget {
-  const ScaleTransitionExample({super.key});
+class Heartbeat extends StatefulWidget {
+  const Heartbeat({super.key});
 
   @override
-  State<ScaleTransitionExample> createState() => _ScaleTransitionExampleState();
+  State<Heartbeat> createState() => _HeartbeatState();
 }
 
-/// [AnimationController]s can be created with `vsync: this` because of
-/// [TickerProviderStateMixin].
-class _ScaleTransitionExampleState extends State<ScaleTransitionExample>
-    with TickerProviderStateMixin {
+// Animation scale class used from the flutter doc website documentation
+class _HeartbeatState extends State<Heartbeat> with TickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
     duration: const Duration(seconds: 2),
     vsync: this,
   )..repeat(reverse: true);
   late final Animation<double> _animation = CurvedAnimation(
     parent: _controller,
-    curve: Curves.fastOutSlowIn,
+    // Animation of the curves to have a beating effect
+    curve: Curves.bounceInOut,
   );
 
   @override
@@ -47,8 +46,13 @@ class _ScaleTransitionExampleState extends State<ScaleTransitionExample>
         child: ScaleTransition(
           scale: _animation,
           child: Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Image.asset('assets/images/Heart.png')),
+            padding: EdgeInsets.all(2.0),
+            child: Image.asset(
+              'assets/images/Heart.png',
+              height: 212.0,
+              width: 212.0,
+            ),
+          ),
         ),
       ),
     );
